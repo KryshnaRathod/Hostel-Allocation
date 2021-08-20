@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import { useState } from "react";
+import '../Room/chooseRoom.css'
 // import close from "./close.jpg";
 
 Modal.setAppElement("#root");

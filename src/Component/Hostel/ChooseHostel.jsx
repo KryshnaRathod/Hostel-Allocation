@@ -1,20 +1,21 @@
-import React  from 'react'
+import { Link } from 'react-router-dom';
+import Classes from '../Hostel/ChooseHostel.module.css';
+import Topbar from '../Topbar/Topbar';
 
-export default function ChooseHostel(props) {
-    let gender = props.gender;
+const ChooseHostel = () => {
+    const Hostel = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6'];
     return (
-        <div className="container-hostel">
-            <div>
-               <h2>Choose a Hostel</h2> 
+        <div>
+        <Topbar/>
+        <div className={Classes.container}>
+            <h1 className={Classes.heading}>Choose a Hostel</h1>
+            <div className={Classes.btnWrapper}>
+                {Hostel.map((item, index) => {
+                    return <Link to={'/floor'}><button className={Classes.btn} key={index}>{item}</button></Link>
+                })}
             </div>
-            <div className="hostel-grid">
-            <button className="hostel-button">{gender}1</button>
-            <button className="hostel-button">{gender}2</button>
-            <button className="hostel-button">{gender}3</button>
-            <button className="hostel-button">{gender}4</button>
-            <button className="hostel-button">{gender}5</button>
-            <button className="hostel-button">{gender}6</button>
-            </div>
+        </div>
         </div>
     )
 }
+export default ChooseHostel;
